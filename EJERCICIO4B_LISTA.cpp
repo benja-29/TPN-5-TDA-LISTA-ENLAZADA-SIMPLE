@@ -1,4 +1,4 @@
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 typedef struct tnodo *pnodo;
@@ -41,7 +41,7 @@ void encolar(tcola &cola, int valor) {
 
 int desencolar(tcola &cola) {
 	if(es_vacia(cola)) {
-		cout << "Cola vacía." << endl;
+		cout << "Cola vacÃ­a." << endl;
 		return -1;
 	} else {
 		pnodo borrado = cola.frente;
