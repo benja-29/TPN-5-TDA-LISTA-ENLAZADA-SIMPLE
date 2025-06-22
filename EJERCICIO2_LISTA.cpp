@@ -1,4 +1,4 @@
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 typedef struct tnodo *pnodo;
@@ -76,7 +76,7 @@ void mostrar(tlista lista) {
 		}
 		cout << "NULL" << endl;
 	} else {
-		cout << "Lista vacía" << endl;
+		cout << "Lista vacÃ­a" << endl;
 	}
 }
 
@@ -108,7 +108,7 @@ int main() {
 		delete eliminado; 
 	}
 	
-	cout << "Lista después de eliminar: ";
+	cout << "Lista despuÃ©s de eliminar: ";
 	mostrar(lista);
 	cout << "Cantidad de elementos: " << cantidad_elementos(lista) << endl;
 	
