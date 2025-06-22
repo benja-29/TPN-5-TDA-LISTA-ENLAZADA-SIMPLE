@@ -1,5 +1,4 @@
-#include <iostream>
-#include <cctype> 
+#include<bits/stdc++.h>
 using namespace std;
 
 template <typename T>
@@ -95,7 +94,7 @@ int main() {
 	listaEnteros.mostrar();
 	
 	int cantidadPrimos = contarPrimos(listaEnteros);
-	cout << "Cantidad de números primos en la lista: " << cantidadPrimos << endl;
+	cout << "Cantidad de nÃºmeros primos en la lista: " << cantidadPrimos << endl;
 	
 	Lista<char> listaCaracteres;
 	listaCaracteres.agregar('A');
@@ -109,8 +108,8 @@ int main() {
 	
 	int mayus = 0, minus = 0;
 	contarMayusMinus(listaCaracteres, mayus, minus);
-	cout << "Mayúsculas: " << mayus << endl;
-	cout << "Minúsculas: " << minus << endl;
+	cout << "MayÃºsculas: " << mayus << endl;
+	cout << "MinÃºsculas: " << minus << endl;
 	
 	return 0;
 }
