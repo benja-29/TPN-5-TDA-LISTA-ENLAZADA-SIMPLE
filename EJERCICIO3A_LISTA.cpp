@@ -1,4 +1,4 @@
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 typedef struct tnodo *pnodo;
@@ -76,7 +76,7 @@ int main() {
 	mostrar(lista);
 	
 	int indice = buscar_indice(lista, 20);
-	cout << "El valor 20 está en la posición: " << indice << endl;
+	cout << "El valor 20 estÃ¡ en la posiciÃ³n: " << indice << endl;
 	
 	return 0;
 }
