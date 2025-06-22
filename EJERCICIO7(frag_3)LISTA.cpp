@@ -1,4 +1,4 @@
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 // clase nodo que representa un nodo de una lista enlazada simple
@@ -13,11 +13,11 @@ public:
 	void setSiguiente(Nodo* sig) { siguiente = sig; }
 };
 
-// la unción desconocido retorna la dirección del último nodo de la lista
+// la unciÃ³n desconocido retorna la direcciÃ³n del Ãºltimo nodo de la lista
 // su proposito es obtener un puntero al nodo final de la lista (tail)
 Nodo* desconocido(Nodo* nodo) {
 	if (nodo == nullptr || nodo->getSiguiente() == nullptr)
-		return nodo; // si es el último nodo o la lista está vacía, retorna el nodo actual
+		return nodo; // si es el Ãºltimo nodo o la lista estÃ¡ vacÃ­a, retorna el nodo actual
 	else
 		return desconocido(nodo->getSiguiente()); // sigue recorriendo hasta llegar al final
 }
@@ -35,8 +35,8 @@ int main() {
 	n3->setSiguiente(n4);
 	n4->setSiguiente(n5);
 	
-	Nodo* ultimo = desconocido(n1); // llama a desconocido para obtener el último nodo
-	cout << "Dato del último nodo: " << ultimo->getDato() << endl;
+	Nodo* ultimo = desconocido(n1); // llama a desconocido para obtener el Ãºltimo nodo
+	cout << "Dato del Ãºltimo nodo: " << ultimo->getDato() << endl;
 	
 	return 0;
 }
