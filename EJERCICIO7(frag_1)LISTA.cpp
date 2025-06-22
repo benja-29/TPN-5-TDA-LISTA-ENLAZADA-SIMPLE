@@ -1,4 +1,4 @@
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 // clase nodo que representa un nodo de una lista enlazada simple
@@ -13,12 +13,12 @@ public:
 	void setSiguiente(Nodo* sig) { siguiente = sig; }
 };
 
-// función enigma la cual imprime los datos de la lista en orden inverso usando recursividad
-// su propósito Mostrar los elementos desde el último hasta el primero
+// funciÃ³n enigma la cual imprime los datos de la lista en orden inverso usando recursividad
+// su propÃ³sito Mostrar los elementos desde el Ãºltimo hasta el primero
 void enigma(Nodo* nodo) {
 	if (nodo != nullptr) {
 		if (nodo->getSiguiente() == nullptr)
-			cout << nodo->getDato() << " "; // caso base el cual imprime el último nodo
+			cout << nodo->getDato() << " "; // caso base el cual imprime el Ãºltimo nodo
 		else {
 			enigma(nodo->getSiguiente());   // llamada recursiva para avanzar al siguiente nodo
 			cout << nodo->getDato() << " "; // imprime al retornar (orden inverso)
@@ -40,7 +40,7 @@ int main() {
 	n4->setSiguiente(n5);
 	
 	cout << "Salida de enigma (inverso): ";
-	enigma(n1); // llama a la función enigma para imprimir la lista al revés
+	enigma(n1); // llama a la funciÃ³n enigma para imprimir la lista al revÃ©s
 	cout << endl;
 	
 	return 0;
