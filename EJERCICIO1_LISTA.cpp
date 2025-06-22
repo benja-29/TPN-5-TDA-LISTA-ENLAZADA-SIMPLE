@@ -1,4 +1,4 @@
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 typedef struct tnodo *pnodo;
@@ -45,13 +45,13 @@ void mostrar(pnodo lista) {
 		}
 		cout << "NULL" << endl;
 	} else {
-		cout << "Lista vacía" << endl;
+		cout << "Lista vacÃ­a" << endl;
 	}
 }
 
 int minimo(pnodo lista) {
 	if (lista == NULL) {
-		cout << "Lista vacía." << endl;
+		cout << "Lista vacÃ­a." << endl;
 		return -1; 
 	}
 	int minValor = lista->dato;
