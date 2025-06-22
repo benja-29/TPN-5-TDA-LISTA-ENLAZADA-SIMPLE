@@ -1,4 +1,4 @@
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 // la clase nodo que representa un nodo de una lista enlazada simple
@@ -13,11 +13,11 @@ public:
 	void setSiguiente(Nodo* sig) { siguiente = sig; }
 };
 
-// la función misterio cuenta la cantidad de nodos de la lista enlazada
-// su propósito es determinar la longitud (cantidad de nodos) de la lista
+// la funciÃ³n misterio cuenta la cantidad de nodos de la lista enlazada
+// su propÃ³sito es determinar la longitud (cantidad de nodos) de la lista
 int misterio(Nodo* nodo) {
 	if (nodo == nullptr)
-		return 0; // si la lista terminó (NULL), retorna 0
+		return 0; // si la lista terminÃ³ (NULL), retorna 0
 	else
 		return misterio(nodo->getSiguiente()) + 1; // cuenta el nodo actual + recursividad
 }
