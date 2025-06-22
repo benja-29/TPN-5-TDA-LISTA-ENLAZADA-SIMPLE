@@ -1,4 +1,4 @@
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 typedef struct tnodo *pnodo;
@@ -29,7 +29,7 @@ void push(tpila &pila, int valor) {
 
 int pop(tpila &pila) {
 	if(es_vacia(pila)) {
-		cout << "Pila vacía." << endl;
+		cout << "Pila vacÃ­a." << endl;
 		return -1;
 	} else {
 		pnodo borrado = pila.tope;
