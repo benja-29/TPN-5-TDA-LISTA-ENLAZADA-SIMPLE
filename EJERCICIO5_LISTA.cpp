@@ -1,7 +1,6 @@
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
-//=================== DEFINICIÓN DE NODO Y FUNCIONES BÁSICAS ===================//
 typedef struct nodo *pnodo;
 typedef struct nodo {
 	int dato;
@@ -39,7 +38,7 @@ void mostrar(pnodo lista) {
 	cout << "NULL" << endl;
 }
 
-//=================== ORDENACIÓN POR SELECCIÓN ===================//
+//ordenacion por seleccion
 void orden_seleccion(pnodo lista) {
 	pnodo i, j, min;
 	int aux;
@@ -56,7 +55,7 @@ void orden_seleccion(pnodo lista) {
 	}
 }
 
-//=================== COMBINAR DOS LISTAS ===================//
+//combinacion de dos pilas
 
 pnodo combinar_sin_orden(pnodo lista1, pnodo lista2) {
 	pnodo nuevaLista = NULL, nuevo;
@@ -84,7 +83,6 @@ pnodo combinar_con_orden(pnodo lista1, pnodo lista2) {
 	return nuevaLista;
 }
 
-//=================== PROGRAMA PRINCIPAL ===================//
 int main() {
 	pnodo lista1, lista2, listaCombinada;
 	iniciar_lista(lista1);
