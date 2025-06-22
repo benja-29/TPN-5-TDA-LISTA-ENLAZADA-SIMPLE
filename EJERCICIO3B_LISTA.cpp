@@ -1,4 +1,4 @@
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 typedef struct tnodo *pnodo;
@@ -78,9 +78,9 @@ int main() {
 	int indice_buscar = 1;
 	pnodo encontrado = buscar_por_indice(lista, indice_buscar);
 	if(encontrado != NULL)
-		cout << "Elemento en la posición " << indice_buscar << ": " << encontrado->dato << endl;
+		cout << "Elemento en la posiciÃ³n " << indice_buscar << ": " << encontrado->dato << endl;
 	else
-		cout << "No existe elemento en esa posición." << endl;
+		cout << "No existe elemento en esa posiciÃ³n." << endl;
 	
 	return 0;
 }
