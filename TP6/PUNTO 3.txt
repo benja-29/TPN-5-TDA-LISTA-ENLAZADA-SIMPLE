@@ -1,0 +1,26 @@
+void DecimalABinario(tlista &lista, int numero) {
+	if (numero == 0) {
+		pnodo nuevo;
+		CrearNodo(nuevo, 0);
+		AgregarInicio(lista, nuevo);
+		return;
+	}
+	
+	while (numero > 0) {
+		int bit = numero % 2;
+		pnodo nuevo;
+		CrearNodo(nuevo, bit);
+		AgregarInicio(lista, nuevo); 
+		numero /= 2;
+	}
+}
+
+void MostrarBinario(tlista lista) {
+	cout << "Número en binario: ";
+	pnodo aux = lista.inicio;
+	while (aux != NULL) {
+		cout << aux->dato;
+		aux = aux->sig;
+	}
+	cout << endl;
+}
