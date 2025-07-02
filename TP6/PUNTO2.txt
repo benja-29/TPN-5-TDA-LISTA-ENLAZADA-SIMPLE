@@ -1,0 +1,121 @@
+#include <iostream>
+using namespace std;
+
+typedef struct tnodo* pnodo;
+
+struct tnodo {
+	int dato;
+	pnodo sig;
+	pnodo ant;
+};
+
+struct tlista {
+	pnodo inicio;
+	pnodo fin;
+};
+
+void IniciarLista(tlista &lista) {
+	lista.inicio = NULL;
+	lista.fin = NULL;
+}
+
+void CrearNodo(pnodo &nuevo, int valor) {
+	nuevo = new tnodo;
+	if (nuevo != NULL) {
+		nuevo->dato = valor;
+		nuevo->sig = NULL;
+		nuevo->ant = NULL;
+	}
+}
+
+void AgregarInicio(tlista &lista, pnodo nuevo) {
+	if (lista.inicio == NULL) {
+		lista.inicio = nuevo;
+		lista.fin = nuevo;
+	} else {
+		nuevo->sig = lista.inicio;
+		lista.inicio->ant = nuevo;
+		lista.inicio = nuevo;
+	}
+}
+
+void AgregarFinal(tlista &lista, pnodo nuevo) {
+	if (lista.inicio == NULL) {
+		lista.inicio = nuevo;
+		lista.fin = nuevo;
+	} else {
+		lista.fin->sig = nuevo;
+		nuevo->ant = lista.fin;
+		lista.fin = nuevo;
+	}
+}
+
+void EliminarInicio(tlista &lista) {
+	if (lista.inicio == NULL) {
+		cout << "La lista está vacía. No se puede quitar.\n";
+		return;
+	}
+	
+	pnodo extraido = lista.inicio;
+	
+	if (lista.inicio == lista.fin) {
+		// Solo hay un nodo
+		lista.inicio = NULL;
+		lista.fin = NULL;
+	} else {
+		lista.inicio = lista.inicio->sig;
+		lista.inicio->ant = NULL;
+	}
+	
+	cout << "Se eliminó el nodo con valor: " << extraido->dato << endl;
+	delete extraido;
+}
+
+void EliminarFinal(tlista &lista) {
+	if (lista.fin == NULL) {
+		cout << "La lista está vacía. No se puede quitar.\n";
+		return;
+	}
+	
+	pnodo extraido = lista.fin;
+	
+	if (lista.inicio == lista.fin) {
+		lista.inicio = NULL;
+		lista.fin = NULL;
+	} else {
+		lista.fin = lista.fin->ant;
+		lista.fin->sig = NULL;
+	}
+	
+	cout << "Se eliminó el nodo con valor: " << extraido->dato << endl;
+	delete extraido;
+}
+
+void MostrarLista(tlista lista) {
+	pnodo i = lista.inicio;
+	cout << "Lista actual: ";
+	while (i != NULL) {
+		cout << i->dato << " ";
+		i = i->sig;
+	}
+	cout << endl;
+}
+
+int main() {
+	tlista miLista;
+	IniciarLista(miLista);
+	
+	pnodo n1; CrearNodo(n1, 10); AgregarInicio(miLista, n1);
+	pnodo n2; CrearNodo(n2, 20); AgregarFinal(miLista, n2);
+	pnodo n3; CrearNodo(n3, 30); AgregarFinal(miLista, n3);
+	
+	MostrarLista(miLista);
+	
+	EliminarInicio(miLista);
+	MostrarLista(miLista);
+	
+	EliminarFinal(miLista);
+	MostrarLista(miLista);
+	
+	return 0;
+}
